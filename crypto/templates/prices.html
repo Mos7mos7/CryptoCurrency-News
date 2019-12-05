@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<h3>{{nosearch}}</h3>
+
+{%if crypto.Response%}
+<h4>sorry that symbol doesn't exist</h4>
+{%endif%}
+{%for key,value in crypto.DISPLAY.items%}
+    
+     <strong>Name : </strong> {{key}} <br>
+     <strong>Price : </strong>{{value.USD.PRICE}} <br>
+     <strong>Day High</strong> {{value.USD.HIGHDAY}} <br>
+     <strong>Day low</strong> {{value.USD.LOWDAY}} <br>
+     <strong>Market Capital</strong> {{value.USD.MKTCAP}} <br>
+    <br> <br>
+    {%endfor%}
+{%endblock%}
